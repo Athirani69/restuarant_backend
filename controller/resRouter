@@ -1,9 +1,15 @@
 const express=require("express")
 
 const router=express.Router()
+const resMdl=require("../model/resModel")
 
-router.post("/add",(req,res)=>{
-    res.send("hy")
+router.post("/add",async(req,res)=>{
+    let data=req.body
+    let resobj=new resMdl(data)
+    let result=await resobj.save()
+    res.json({
+        status:"success"
+    })
 })
 
 
