@@ -1,0 +1,13 @@
+const mongoose=require("mongoose")
+
+const resSchema=new mongoose.Schema(
+    {
+        orderid:String,
+        custname:String,
+        custfon:String,
+        fddtails:String,
+        Price:String
+    }
+)
+
+module.exports=mongoose.model("restuarant",resSchema)
